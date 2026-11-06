@@ -137,16 +137,20 @@ export default function AiAssistantDrawer() {
 
   const promptSuggestions = language === 'bn'
     ? [
-        'হৃদরোগ বিশেষজ্ঞ ডাক্তার দেখান',
-        'সিবিসি রক্তের পরীক্ষার খরচ কত?',
-        'নিকটস্থ ২৪/৭ ইমার্জেন্সি হাসপাতাল',
-        'অনলাইন ভিডিও ডাক্তারের স্লট বুকিং'
+        'বুকে ব্যথা ও অস্বস্তি হচ্ছে',
+        'হাঁটু ও কোমরে প্রচণ্ড ব্যথা',
+        'পেটে জ্বালাপোড়া ও এসিডিটি',
+        'বাচ্চার জ্বর ও কাশি হচ্ছে',
+        'মাথা ব্যথা ও মাইগ্রেন সমস্যা',
+        'সিবিসি টেস্টের খরচ কত?'
       ]
     : [
-        'Find a cardiologist near me',
-        'Compare CBC test prices',
-        'Nearest emergency hospital',
-        'I need an Internal Medicine specialist'
+        'Severe chest pain and tightness',
+        'Knee joint and lower back pain',
+        'Burning stomach ache and acid reflux',
+        'Child has high fever and cough',
+        'Migraine headache and dizziness',
+        'Compare CBC test prices'
       ];
 
   return (

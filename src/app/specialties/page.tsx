@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Stethoscope, HeartPulse, Activity, Users, Brain, Baby, ChevronRight } from 'lucide-react';
+import { Stethoscope, HeartPulse, Activity, Users, Brain, Baby, Sparkles, Eye, ShieldCheck, ChevronRight } from 'lucide-react';
 import { SPECIALTIES, DOCTORS } from '@/lib/data';
 
 export default function SpecialtiesDirectoryPage() {
@@ -11,6 +11,9 @@ export default function SpecialtiesDirectoryPage() {
     Users,
     Brain,
     Baby,
+    Sparkles,
+    Eye,
+    ShieldCheck,
   };
 
   return (

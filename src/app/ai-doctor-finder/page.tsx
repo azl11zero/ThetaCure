@@ -38,16 +38,24 @@ export default function AiDoctorFinderPage() {
   const bodyParts = [
     'General / Whole Body',
     'Heart & Chest',
-    'Head & Brain',
     'Stomach & Digestion',
-    'Bones & Joints',
-    'Women’s Health',
+    'Bones, Spine & Joints',
+    'Head, Brain & Nerves',
+    'Child Health & Pediatrics',
+    'Skin, Rash & Hair',
+    'Ear, Nose & Throat (ENT)',
+    'Eyes & Vision',
+    'Kidneys & Urinary',
+    'Lungs & Breathing',
+    'Diabetes & Hormones',
+    'Mental Health & Sleep',
+    'Surgical & Hernia',
+    'Women’s Health & Pregnancy',
   ];
 
   const handleStartAnalysis = (e: React.FormEvent) => {
     e.preventDefault();
     if (!symptomsInput.trim()) {
-      alert('Please describe your symptoms to continue.');
       return;
     }
 
@@ -61,21 +69,41 @@ export default function AiDoctorFinderPage() {
       setAnalyzing(false);
       setIsEmergencyDetected(hasEmergency);
 
-      // Match specialty guidance
+      // Match specialty guidance across all 15 clinical taxonomies
       let matched = SYMPTOM_DATA[0];
-      if (lower.includes('chest') || lower.includes('heart') || lower.includes('breath') || selectedBodyPart === 'Heart & Chest') {
+      if (lower.includes('chest') || lower.includes('heart') || lower.includes('palpitation') || selectedBodyPart === 'Heart & Chest') {
         matched = SYMPTOM_DATA[1];
-      } else if (lower.includes('back') || lower.includes('knee') || lower.includes('joint') || lower.includes('bone') || selectedBodyPart === 'Bones & Joints') {
+      } else if (lower.includes('back') || lower.includes('knee') || lower.includes('joint') || lower.includes('bone') || lower.includes('spine') || selectedBodyPart === 'Bones, Spine & Joints') {
         matched = SYMPTOM_DATA[2];
-      } else if (lower.includes('head') || lower.includes('dizzy') || lower.includes('seizure') || selectedBodyPart === 'Head & Brain') {
+      } else if (lower.includes('head') || lower.includes('migraine') || lower.includes('dizzy') || lower.includes('seizure') || lower.includes('numb') || selectedBodyPart === 'Head, Brain & Nerves') {
         matched = SYMPTOM_DATA[3];
-      } else if (lower.includes('period') || lower.includes('pregnancy') || selectedBodyPart === 'Women’s Health') {
+      } else if (lower.includes('period') || lower.includes('pregnancy') || lower.includes('pelvic') || lower.includes('pcos') || selectedBodyPart === 'Women’s Health & Pregnancy') {
         matched = SYMPTOM_DATA[4];
+      } else if (lower.includes('child') || lower.includes('baby') || lower.includes('kid') || lower.includes('infant') || lower.includes('shishu') || selectedBodyPart === 'Child Health & Pediatrics') {
+        matched = SYMPTOM_DATA[5];
+      } else if (lower.includes('stomach') || lower.includes('acid') || lower.includes('gerd') || lower.includes('vomit') || lower.includes('liver') || lower.includes('gas') || selectedBodyPart === 'Stomach & Digestion') {
+        matched = SYMPTOM_DATA[6];
+      } else if (lower.includes('skin') || lower.includes('rash') || lower.includes('itch') || lower.includes('acne') || lower.includes('hair') || selectedBodyPart === 'Skin, Rash & Hair') {
+        matched = SYMPTOM_DATA[7];
+      } else if (lower.includes('throat') || lower.includes('ear') || lower.includes('sinus') || lower.includes('tonsil') || selectedBodyPart === 'Ear, Nose & Throat (ENT)') {
+        matched = SYMPTOM_DATA[8];
+      } else if (lower.includes('eye') || lower.includes('vision') || lower.includes('blurry') || lower.includes('cataract') || selectedBodyPart === 'Eyes & Vision') {
+        matched = SYMPTOM_DATA[9];
+      } else if (lower.includes('urine') || lower.includes('kidney') || lower.includes('uti') || lower.includes('stone') || selectedBodyPart === 'Kidneys & Urinary') {
+        matched = SYMPTOM_DATA[10];
+      } else if (lower.includes('cough') || lower.includes('asthma') || lower.includes('breath') || lower.includes('wheez') || selectedBodyPart === 'Lungs & Breathing') {
+        matched = SYMPTOM_DATA[11];
+      } else if (lower.includes('sugar') || lower.includes('diabetes') || lower.includes('thyroid') || lower.includes('hormone') || selectedBodyPart === 'Diabetes & Hormones') {
+        matched = SYMPTOM_DATA[12];
+      } else if (lower.includes('anxiety') || lower.includes('depress') || lower.includes('panic') || lower.includes('sleep') || lower.includes('insomnia') || selectedBodyPart === 'Mental Health & Sleep') {
+        matched = SYMPTOM_DATA[13];
+      } else if (lower.includes('hernia') || lower.includes('gallstone') || lower.includes('appendix') || lower.includes('pile') || selectedBodyPart === 'Surgical & Hernia') {
+        matched = SYMPTOM_DATA[14];
       }
 
       setMatchedGuidance(matched);
       setStep(2);
-    }, 1200);
+    }, 800);
   };
 
   const recommendedDoctor = DOCTORS.find((d) => d.slug === matchedGuidance?.recommendedDoctorSlug) || DOCTORS[0];

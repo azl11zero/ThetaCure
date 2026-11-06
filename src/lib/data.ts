@@ -54,10 +54,92 @@ export const SPECIALTIES: SpecialtyItem[] = [
     description: 'Child wellness, newborn critical care, immunizations, developmental milestones, and childhood infections.',
     doctorCount: 31,
     commonConditions: ['Childhood Fever', 'Cough & Asthma', 'Vaccination Schedule', 'Growth Monitoring', 'Diarrhea']
+  },
+  {
+    id: 'spec-7',
+    name: 'Gastroenterology & Hepatology',
+    slug: 'gastroenterology',
+    icon: 'Activity',
+    description: 'Stomach, liver, gallbladder, pancreas, and intestinal disorders, endoscopy, colonoscopy, and fatty liver care.',
+    doctorCount: 26,
+    commonConditions: ['Stomach Ache', 'Acid Reflux & GERD', 'Fatty Liver', 'Chronic Constipation', 'Jaundice']
+  },
+  {
+    id: 'spec-8',
+    name: 'Dermatology & Venereology',
+    slug: 'dermatology',
+    icon: 'Sparkles',
+    description: 'Skin, hair, nail, and cosmetic conditions, clinical dermatology, allergy testing, and acne management.',
+    doctorCount: 24,
+    commonConditions: ['Skin Rash & Eczema', 'Acne & Pimples', 'Fungal Infections', 'Hair Fall & Alopecia', 'Psoriasis']
+  },
+  {
+    id: 'spec-9',
+    name: 'ENT (Ear, Nose & Throat)',
+    slug: 'ent',
+    icon: 'Activity',
+    description: 'Hearing, sinus, throat, voice, and balance disorders, tonsillectomy, and endoscopic sinus surgery.',
+    doctorCount: 21,
+    commonConditions: ['Sore Throat', 'Ear Ache & Tinnitus', 'Chronic Sinusitis', 'Tonsillitis', 'Nasal Polyps']
+  },
+  {
+    id: 'spec-10',
+    name: 'Ophthalmology (Eye)',
+    slug: 'ophthalmology',
+    icon: 'Eye',
+    description: 'Comprehensive eye care, vision correction, cataract phaco surgery, glaucoma, and retinal assessment.',
+    doctorCount: 28,
+    commonConditions: ['Blurry Vision', 'Cataract', 'Eye Strain & Dry Eye', 'Red Eye & Conjunctivitis', 'Glaucoma']
+  },
+  {
+    id: 'spec-11',
+    name: 'Nephrology & Urology',
+    slug: 'nephrology-urology',
+    icon: 'ShieldCheck',
+    description: 'Kidney health, dialysis, kidney stones, urinary tract infections, and male prostate health.',
+    doctorCount: 19,
+    commonConditions: ['Burning Urination (UTI)', 'Kidney Stones', 'Protein in Urine', 'Prostate Enlargement', 'Chronic Kidney Disease']
+  },
+  {
+    id: 'spec-12',
+    name: 'Pulmonology (Chest & Lungs)',
+    slug: 'pulmonology',
+    icon: 'Activity',
+    description: 'Respiratory diseases, bronchial asthma, COPD, chronic bronchitis, pneumonia, and post-COVID fibrosis.',
+    doctorCount: 20,
+    commonConditions: ['Persistent Cough', 'Asthma & Wheezing', 'Shortness of Breath', 'COPD & Emphysema', 'Sleep Apnea']
+  },
+  {
+    id: 'spec-13',
+    name: 'Endocrinology & Diabetology',
+    slug: 'endocrinology',
+    icon: 'Activity',
+    description: 'Hormonal disorders, insulin resistance, type 1 & 2 diabetes management, and thyroid dysfunction.',
+    doctorCount: 18,
+    commonConditions: ['Uncontrolled Diabetes', 'Hypothyroidism', 'Hyperthyroidism', 'Weight Fluctuation', 'Metabolic Syndrome']
+  },
+  {
+    id: 'spec-14',
+    name: 'Psychiatry & Mental Health',
+    slug: 'psychiatry',
+    icon: 'Brain',
+    description: 'Mental health assessment, depression, anxiety, panic disorder, stress management, and sleep therapy.',
+    doctorCount: 16,
+    commonConditions: ['Anxiety & Panic', 'Depression & Mood Disorder', 'Insomnia & Sleep Disturbance', 'OCD', 'Work Burnout']
+  },
+  {
+    id: 'spec-15',
+    name: 'General & Laparoscopic Surgery',
+    slug: 'general-surgery',
+    icon: 'Activity',
+    description: 'Minimally invasive laparoscopic abdominal surgery, hernia repair, gallbladder removal, and colorectal care.',
+    doctorCount: 27,
+    commonConditions: ['Hernia', 'Gallstones (Cholecystectomy)', 'Appendicitis', 'Hemorrhoids & Piles', 'Soft Tissue Lumps']
   }
 ];
 
 export const DOCTORS: Doctor[] = [
+  // 1. Internal Medicine - Dr. Farzana Ahmed
   {
     id: 'doc-1',
     slug: 'dr-farzana-ahmed',
@@ -66,36 +148,26 @@ export const DOCTORS: Doctor[] = [
     isVerified: true,
     isDemo: true,
     bmdcNumber: 'A-49210',
-    degrees: 'MBBS, MD (Internal Medicine)',
+    degrees: 'MBBS (DMC), MD (Internal Medicine, BSMMU)',
     specialty: 'Internal Medicine Specialist',
     subSpecialties: ['Diabetes Management', 'Hypertension', 'Thyroid Disorders', 'General Medicine'],
     experienceYears: 8,
     rating: 4.9,
-    reviewCount: 1240,
+    reviewCount: 1420,
     hospital: {
       id: 'hosp-1',
       slug: 'united-hospital-dhaka',
       name: 'United Hospital, Dhaka',
       location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
     },
-    fees: {
-      inPerson: 1000,
-      online: 800,
-    },
+    fees: { inPerson: 1000, online: 800 },
     nextAvailableSlot: {
       date: 'Tomorrow, 31 Oct',
       time: '10:00 AM – 01:00 PM',
       formatted: 'Tomorrow, 10:00 AM',
     },
     about: 'A dedicated Internal Medicine specialist with 8+ years of experience in diagnosing and managing a wide range of adult health conditions. Dr. Farzana focuses on holistic disease prevention and evidence-based chronic disease control.',
-    areasOfExpertise: [
-      'Diabetes Management',
-      'Hypertension & Vascular Care',
-      'Thyroid & Endocrine Disorders',
-      'Infectious Diseases',
-      'Preventive Adult Care',
-      'Geriatric Medicine'
-    ],
+    areasOfExpertise: ['Diabetes Management', 'Hypertension & Vascular Care', 'Thyroid & Endocrine Disorders', 'Infectious Diseases', 'Preventive Adult Care', 'Geriatric Medicine'],
     education: [
       { degree: 'MBBS', institution: 'Dhaka Medical College (DMC)' },
       { degree: 'MD (Internal Medicine)', institution: 'Bangabandhu Sheikh Mujib Medical University (BSMMU)' },
@@ -110,63 +182,41 @@ export const DOCTORS: Doctor[] = [
       { day: 'Thursday', slots: ['10:00 AM', '12:00 PM', '03:00 PM'], type: 'in-person' },
     ],
     reviews: [
-      {
-        id: 'rev-1',
-        patientName: 'Kazi Mohammad Rafiq',
-        rating: 5,
-        date: '2 weeks ago',
-        comment: 'Dr. Farzana was very patient and explained my hypertension management plan in detail. The medicine dosage worked wonderfully without side effects.',
-        verifiedVisit: true,
-      },
-      {
-        id: 'rev-2',
-        patientName: 'Shaila Parveen',
-        rating: 5,
-        date: '1 month ago',
-        comment: 'Booked online consultation through ThetaCure. The video call was seamless and her prescription was clearly written and instantly accessible.',
-        verifiedVisit: true,
-      },
-      {
-        id: 'rev-3',
-        patientName: 'Tariqul Islam',
-        rating: 4.8,
-        date: '2 months ago',
-        comment: 'Very polite, attentive, and doesn’t prescribe unnecessary diagnostic tests. Highly recommended in Gulshan area.',
-        verifiedVisit: true,
-      }
+      { id: 'rev-1', patientName: 'Kazi Mohammad Rafiq', rating: 5, date: '2 weeks ago', comment: 'Dr. Farzana was very patient and explained my hypertension management plan in detail.', verifiedVisit: true },
+      { id: 'rev-2', patientName: 'Shaila Parveen', rating: 5, date: '1 month ago', comment: 'Booked online consultation through ThetaCure. The video call was seamless.', verifiedVisit: true },
+      { id: 'rev-3', patientName: 'Tariqul Islam', rating: 4.8, date: '2 months ago', comment: 'Very polite, attentive, and doesn’t prescribe unnecessary diagnostic tests.', verifiedVisit: true }
     ]
   },
+
+  // 2. Cardiology - Prof. Dr. A. Rahman
   {
     id: 'doc-2',
     slug: 'prof-dr-a-rahman',
     name: 'Prof. Dr. A. Rahman',
-    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=90',
     isVerified: true,
     isDemo: true,
     bmdcNumber: 'A-21894',
-    degrees: 'MBBS, FCPS (Cardiology), FACC (USA)',
+    degrees: 'MBBS (DMC), FCPS (Cardiology), FACC (USA)',
     specialty: 'Cardiology',
-    subSpecialties: ['Interventional Cardiology', 'Heart Failure Management', 'Echocardiography'],
+    subSpecialties: ['Interventional Cardiology', 'Heart Failure Management', 'Echocardiography', 'Hypertension'],
     experienceYears: 22,
     rating: 4.9,
-    reviewCount: 1240,
+    reviewCount: 1480,
     hospital: {
       id: 'hosp-1',
       slug: 'united-hospital-dhaka',
       name: 'United Hospital, Dhaka',
       location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
     },
-    fees: {
-      inPerson: 1500,
-      online: 1200,
-    },
+    fees: { inPerson: 1500, online: 1200 },
     nextAvailableSlot: {
       date: 'Today, 30 Oct',
       time: '04:00 PM – 07:00 PM',
       formatted: 'Today, 04:00 PM',
     },
-    about: 'Senior Consultant with over two decades of clinical experience in clinical and interventional cardiology, coronary angioplasty, and cardiac rehabilitation.',
-    areasOfExpertise: ['Angioplasty & Stenting', 'Hypertensive Heart Disease', 'Valvular Heart Disease'],
+    about: 'Senior Consultant with over two decades of clinical experience in clinical and interventional cardiology, coronary angioplasty, and cardiac rehabilitation at leading cardiac institutes.',
+    areasOfExpertise: ['Angioplasty & Stenting', 'Hypertensive Heart Disease', 'Valvular Heart Disease', 'Arrhythmia Management'],
     education: [
       { degree: 'MBBS', institution: 'Dhaka Medical College' },
       { degree: 'FCPS (Cardiology)', institution: 'BCPS' },
@@ -177,39 +227,42 @@ export const DOCTORS: Doctor[] = [
       { day: 'Saturday', slots: ['04:00 PM', '05:00 PM', '06:00 PM'], type: 'in-person' },
       { day: 'Monday', slots: ['04:00 PM', '05:00 PM', '06:00 PM'], type: 'in-person' },
       { day: 'Wednesday', slots: ['07:00 PM', '08:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-c1', patientName: 'Mahmudur Rahman', rating: 5, date: '1 week ago', comment: 'Prof. Rahman accurately diagnosed my coronary blockages and supervised my stent procedure smoothly.', verifiedVisit: true },
+      { id: 'rev-c2', patientName: 'Rokeya Begum', rating: 4.9, date: '3 weeks ago', comment: 'Excellent doctor. He answered all our questions regarding post-bypass medicine and recovery.', verifiedVisit: true }
     ]
   },
+
+  // 3. Orthopedics - Dr. Tanvir Hasan
   {
     id: 'doc-3',
     slug: 'dr-tanvir-hasan',
     name: 'Dr. Tanvir Hasan',
-    avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=90',
     isVerified: true,
     isDemo: true,
     bmdcNumber: 'A-38501',
-    degrees: 'MBBS, MS (Orthopedics)',
+    degrees: 'MBBS (SSMC), MS (Orthopedics, NITOR)',
     specialty: 'Orthopedics',
-    subSpecialties: ['Joint Replacement', 'Trauma Surgery', 'Sports Injury Rehabilitation'],
+    subSpecialties: ['Joint Replacement', 'Trauma Surgery', 'Sports Injury Rehabilitation', 'Spine Care'],
     experienceYears: 12,
     rating: 4.9,
-    reviewCount: 760,
+    reviewCount: 1260,
     hospital: {
       id: 'hosp-1',
       slug: 'united-hospital-dhaka',
       name: 'United Hospital, Dhaka',
       location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
     },
-    fees: {
-      inPerson: 1200,
-      online: 1000,
-    },
+    fees: { inPerson: 1200, online: 1000 },
     nextAvailableSlot: {
       date: 'Friday, 1 Nov',
       time: '03:00 PM – 06:00 PM',
       formatted: 'Friday, 03:00 PM',
     },
-    about: 'Expert Orthopedic Surgeon specializing in arthroscopy, complex fracture repair, and minimal-invasive knee and hip replacement surgery.',
-    areasOfExpertise: ['Knee Arthroscopy', 'Spine & Back Pain', 'Osteoarthritis Management'],
+    about: 'Expert Orthopedic Surgeon specializing in arthroscopy, complex fracture repair, and minimally-invasive knee and hip replacement surgery.',
+    areasOfExpertise: ['Knee Arthroscopy', 'Spine & Lower Back Pain', 'Osteoarthritis Management', 'Sports Ligament Repair'],
     education: [
       { degree: 'MBBS', institution: 'Sir Salimullah Medical College' },
       { degree: 'MS (Orthopedics)', institution: 'NITOR, Dhaka' },
@@ -219,39 +272,41 @@ export const DOCTORS: Doctor[] = [
       { day: 'Sunday', slots: ['03:00 PM', '04:00 PM', '05:00 PM'], type: 'in-person' },
       { day: 'Tuesday', slots: ['03:00 PM', '04:00 PM'], type: 'in-person' },
       { day: 'Thursday', slots: ['07:00 PM', '08:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-o1', patientName: 'Ahsan Habib', rating: 5, date: '2 weeks ago', comment: 'My severe lower back pain and sciatica resolved after following his exercise and medication regimen.', verifiedVisit: true }
     ]
   },
+
+  // 4. Gynecology & Obstetrics - Prof. Dr. Nusrat Jahan
   {
     id: 'doc-4',
     slug: 'dr-nusrat-jahan',
-    name: 'Dr. Nusrat Jahan',
-    avatar: 'https://images.unsplash.com/photo-1594824813579-43c246f497cf?auto=format&fit=crop&w=600&q=80',
+    name: 'Prof. Dr. Nusrat Jahan',
+    avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=90',
     isVerified: true,
     isDemo: true,
     bmdcNumber: 'A-51920',
-    degrees: 'MBBS, FCPS (Obs & Gynae)',
+    degrees: 'MBBS (DMC), FCPS (Obs & Gynae), Fellowship in Laparoscopy (India)',
     specialty: 'Gynecology & Obstetrics',
-    subSpecialties: ['High Risk Pregnancy', 'Laparoscopic Surgery', 'PCOS Management'],
-    experienceYears: 10,
-    rating: 4.8,
-    reviewCount: 950,
+    subSpecialties: ['High Risk Pregnancy', 'Laparoscopic Surgery', 'PCOS Management', 'Infertility'],
+    experienceYears: 14,
+    rating: 4.9,
+    reviewCount: 1350,
     hospital: {
       id: 'hosp-2',
       slug: 'square-hospital-dhaka',
       name: 'Square Hospital, Dhaka',
       location: '18/F Bir Uttam Qazi Nuruzzaman Sarak, West Panthapath, Dhaka 1205',
     },
-    fees: {
-      inPerson: 1200,
-      online: 900,
-    },
+    fees: { inPerson: 1200, online: 900 },
     nextAvailableSlot: {
       date: 'Tomorrow, 31 Oct',
       time: '05:00 PM – 08:00 PM',
       formatted: 'Tomorrow, 05:00 PM',
     },
-    about: 'Compassionate women’s health specialist focusing on maternal health, high-risk pregnancy monitoring, and minimally invasive laparoscopic interventions.',
-    areasOfExpertise: ['Antenatal Care', 'Infertility Evaluation', 'Adolescent Gynecology'],
+    about: 'Compassionate women’s health specialist focusing on maternal health, high-risk pregnancy monitoring, PCOS management, and minimally invasive laparoscopic interventions.',
+    areasOfExpertise: ['Antenatal Care', 'PCOS & Hormone Correction', 'Infertility Evaluation', 'Adolescent Gynecology'],
     education: [
       { degree: 'MBBS', institution: 'Dhaka Medical College' },
       { degree: 'FCPS (Obs & Gynae)', institution: 'BCPS' },
@@ -261,39 +316,41 @@ export const DOCTORS: Doctor[] = [
       { day: 'Saturday', slots: ['05:00 PM', '06:00 PM'], type: 'in-person' },
       { day: 'Monday', slots: ['05:00 PM', '06:00 PM', '07:00 PM'], type: 'in-person' },
       { day: 'Wednesday', slots: ['08:00 PM', '09:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-g1', patientName: 'Farhana Yasmin', rating: 5, date: '3 days ago', comment: 'Dr. Nusrat made my pregnancy journey stress-free. Very empathetic and gentle doctor.', verifiedVisit: true }
     ]
   },
+
+  // 5. Neurology - Dr. Kazi Shafiul Alam
   {
     id: 'doc-5',
     slug: 'dr-kazi-shafiul-alam',
     name: 'Dr. Kazi Shafiul Alam',
-    avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=90',
     isVerified: true,
     isDemo: true,
     bmdcNumber: 'A-31209',
-    degrees: 'MBBS, FCPS (Neurology), MRCP (UK)',
+    degrees: 'MBBS (CMC), FCPS (Neurology), MRCP (UK)',
     specialty: 'Neurology',
     subSpecialties: ['Stroke Management', 'Epilepsy & Seizures', 'Parkinsonism', 'Migraine Care'],
     experienceYears: 15,
     rating: 4.9,
-    reviewCount: 680,
+    reviewCount: 1180,
     hospital: {
       id: 'hosp-3',
       slug: 'evercare-hospital-dhaka',
       name: 'Evercare Hospital, Dhaka',
       location: 'Plot 81, Block E, Bashundhara R/A, Dhaka 1229',
     },
-    fees: {
-      inPerson: 1500,
-      online: 1100,
-    },
+    fees: { inPerson: 1500, online: 1100 },
     nextAvailableSlot: {
       date: 'Saturday, 2 Nov',
       time: '11:00 AM – 02:00 PM',
       formatted: 'Saturday, 11:00 AM',
     },
-    about: 'Consultant Neurologist specialized in clinical neurophysiology, acute stroke thrombolysis, and long-term neuro-degenerative disorder management.',
-    areasOfExpertise: ['Stroke Rehabilitation', 'Headache & Migraine', 'Peripheral Neuropathy'],
+    about: 'Consultant Neurologist specialized in clinical neurophysiology, acute stroke thrombolysis, severe migraine protocols, and long-term neuro-degenerative disorder management.',
+    areasOfExpertise: ['Stroke Rehabilitation', 'Headache & Chronic Migraine', 'Peripheral Neuropathy', 'Epilepsy Management'],
     education: [
       { degree: 'MBBS', institution: 'Chittagong Medical College' },
       { degree: 'FCPS (Neurology)', institution: 'BCPS' },
@@ -304,6 +361,455 @@ export const DOCTORS: Doctor[] = [
       { day: 'Saturday', slots: ['11:00 AM', '12:00 PM', '01:00 PM'], type: 'in-person' },
       { day: 'Tuesday', slots: ['11:00 AM', '12:00 PM'], type: 'in-person' },
       { day: 'Thursday', slots: ['06:00 PM', '07:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-n1', patientName: 'Tanvir Chowdhury', rating: 5, date: '1 month ago', comment: 'His diagnosis for my chronic unilateral migraine was accurate. Medicine worked within 2 days.', verifiedVisit: true }
+    ]
+  },
+
+  // 6. Pediatrics & Child Health - Prof. Dr. Mehedi Hasan
+  {
+    id: 'doc-6',
+    slug: 'prof-dr-mehedi-hasan',
+    name: 'Prof. Dr. Mehedi Hasan',
+    avatar: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-28491',
+    degrees: 'MBBS (DMC), DCH (London), FCPS (Pediatrics)',
+    specialty: 'Pediatrics',
+    subSpecialties: ['Childhood Asthma', 'Newborn Critical Care', 'Pediatric Nutrition', 'Growth Disorders'],
+    experienceYears: 18,
+    rating: 4.9,
+    reviewCount: 1520,
+    hospital: {
+      id: 'hosp-2',
+      slug: 'square-hospital-dhaka',
+      name: 'Square Hospital, Dhaka',
+      location: '18/F Bir Uttam Qazi Nuruzzaman Sarak, West Panthapath, Dhaka 1205',
+    },
+    fees: { inPerson: 1200, online: 900 },
+    nextAvailableSlot: {
+      date: 'Tomorrow, 31 Oct',
+      time: '04:00 PM – 07:00 PM',
+      formatted: 'Tomorrow, 04:00 PM',
+    },
+    about: 'Renowned Pediatrician with 18+ years of dedicated service in newborn health, childhood infectious illnesses, pediatric asthma management, and milestone assessments.',
+    areasOfExpertise: ['Childhood Fever & Infections', 'Pediatric Asthma & Wheezing', 'Newborn Care & Jaundice', 'Immunization & Growth'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'DCH', institution: 'Royal College of Paediatrics (London)' },
+      { degree: 'FCPS (Pediatrics)', institution: 'BCPS' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Sunday', slots: ['04:00 PM', '05:00 PM', '06:00 PM'], type: 'in-person' },
+      { day: 'Tuesday', slots: ['04:00 PM', '05:00 PM'], type: 'in-person' },
+      { day: 'Thursday', slots: ['07:00 PM', '08:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-p1', patientName: 'Nazia Sultana', rating: 5, date: '1 week ago', comment: 'Prof. Mehedi is the most caring child specialist. He treated my 3-year-old’s persistent wheezing patiently.', verifiedVisit: true }
+    ]
+  },
+
+  // 7. Gastroenterology & Hepatology - Prof. Dr. Tariqul Islam Chowdhury
+  {
+    id: 'doc-7',
+    slug: 'prof-dr-tariqul-islam',
+    name: 'Prof. Dr. Tariqul Islam Chowdhury',
+    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-24310',
+    degrees: 'MBBS (DMC), MD (Gastroenterology, BSMMU), FACG (USA)',
+    specialty: 'Gastroenterology & Hepatology',
+    subSpecialties: ['Diagnostic Endoscopy', 'Fatty Liver & Cirrhosis', 'GERD & Peptic Ulcer', 'IBS Management'],
+    experienceYears: 20,
+    rating: 4.9,
+    reviewCount: 1390,
+    hospital: {
+      id: 'hosp-4',
+      slug: 'labaid-specialized-hospital',
+      name: 'Labaid Specialized Hospital',
+      location: 'House 06, Road 04, Dhanmondi, Dhaka 1205',
+    },
+    fees: { inPerson: 1300, online: 1000 },
+    nextAvailableSlot: {
+      date: 'Today, 30 Oct',
+      time: '05:00 PM – 08:00 PM',
+      formatted: 'Today, 05:00 PM',
+    },
+    about: 'Leading Gastroenterologist and Hepatologist in Bangladesh. Expert in upper GI endoscopy, colonoscopy, viral hepatitis, chronic acid reflux, and fatty liver reversal therapies.',
+    areasOfExpertise: ['Stomach Pain & Gastritis', 'Acid Reflux / GERD', 'Fatty Liver Disease', 'Irritable Bowel Syndrome (IBS)'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'MD (Gastroenterology)', institution: 'BSMMU' },
+      { degree: 'Fellowship', institution: 'American College of Gastroenterology' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Saturday', slots: ['05:00 PM', '06:00 PM', '07:00 PM'], type: 'in-person' },
+      { day: 'Monday', slots: ['05:00 PM', '06:00 PM'], type: 'in-person' },
+      { day: 'Wednesday', slots: ['08:00 PM', '09:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-gast1', patientName: 'Sabbir Ahmed', rating: 5, date: '2 weeks ago', comment: 'Suffered from severe GERD and burning chest for 2 years. His prescribed regimen cured my symptoms completely.', verifiedVisit: true }
+    ]
+  },
+
+  // 8. Dermatology & Venereology - Dr. Sabrina Karim
+  {
+    id: 'doc-8',
+    slug: 'dr-sabrina-karim',
+    name: 'Dr. Sabrina Karim',
+    avatar: 'https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-46782',
+    degrees: 'MBBS (SSMC), DDV (BSMMU), FCPS (Dermatology)',
+    specialty: 'Dermatology & Venereology',
+    subSpecialties: ['Clinical Dermatology', 'Eczema & Psoriasis', 'Acne Scar Protocols', 'Hair Loss Therapy'],
+    experienceYears: 11,
+    rating: 4.9,
+    reviewCount: 1210,
+    hospital: {
+      id: 'hosp-1',
+      slug: 'united-hospital-dhaka',
+      name: 'United Hospital, Dhaka',
+      location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
+    },
+    fees: { inPerson: 1000, online: 800 },
+    nextAvailableSlot: {
+      date: 'Tomorrow, 31 Oct',
+      time: '02:00 PM – 05:00 PM',
+      formatted: 'Tomorrow, 02:00 PM',
+    },
+    about: 'Specialist Dermatologist focusing on clinical skin allergy identification, chronic fungal infections, eczema, adult acne, and scalp trichology.',
+    areasOfExpertise: ['Skin Rashes & Allergies', 'Eczema & Psoriasis', 'Severe Acne & Rosacea', 'Hair Fall & Scalp Health'],
+    education: [
+      { degree: 'MBBS', institution: 'Sir Salimullah Medical College' },
+      { degree: 'DDV', institution: 'BSMMU' },
+      { degree: 'FCPS (Dermatology)', institution: 'BCPS' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Saturday', slots: ['02:00 PM', '03:00 PM', '04:00 PM'], type: 'in-person' },
+      { day: 'Tuesday', slots: ['02:00 PM', '03:00 PM'], type: 'in-person' },
+      { day: 'Thursday', slots: ['07:00 PM', '08:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-derm1', patientName: 'Farzana Haque', rating: 5, date: '3 weeks ago', comment: 'Dr. Sabrina accurately diagnosed my fungal rash. Within 10 days of the cream, it completely vanished.', verifiedVisit: true }
+    ]
+  },
+
+  // 9. ENT - Dr. M. A. Matin
+  {
+    id: 'doc-9',
+    slug: 'dr-m-a-matin',
+    name: 'Dr. M. A. Matin',
+    avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-32190',
+    degrees: 'MBBS (DMC), MS (ENT, BSMMU), Fellow in Rhinology (India)',
+    specialty: 'ENT (Ear, Nose & Throat)',
+    subSpecialties: ['Sinus Surgery', 'Hearing & Vertigo', 'Vocal Cord Microsurgery', 'Tonsillectomy'],
+    experienceYears: 16,
+    rating: 4.9,
+    reviewCount: 1150,
+    hospital: {
+      id: 'hosp-2',
+      slug: 'square-hospital-dhaka',
+      name: 'Square Hospital, Dhaka',
+      location: '18/F Bir Uttam Qazi Nuruzzaman Sarak, West Panthapath, Dhaka 1205',
+    },
+    fees: { inPerson: 1200, online: 900 },
+    nextAvailableSlot: {
+      date: 'Tomorrow, 31 Oct',
+      time: '06:00 PM – 09:00 PM',
+      formatted: 'Tomorrow, 06:00 PM',
+    },
+    about: 'Experienced ENT and Head-Neck Surgeon with extensive experience in functional endoscopic sinus surgery (FESS), chronic ear discharge, tonsil disorders, and hoarseness.',
+    areasOfExpertise: ['Chronic Sinusitis & Nasal Blockage', 'Ear Pain & Tinnitus', 'Tonsillitis & Adenoids', 'Throat Pain & Voice Care'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'MS (ENT)', institution: 'BSMMU' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Sunday', slots: ['06:00 PM', '07:00 PM', '08:00 PM'], type: 'in-person' },
+      { day: 'Tuesday', slots: ['06:00 PM', '07:00 PM'], type: 'in-person' },
+      { day: 'Friday', slots: ['10:00 AM', '11:00 AM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-ent1', patientName: 'Kamrul Hasan', rating: 5, date: '1 month ago', comment: 'Severe sinus headache was relieved after his treatment plan and nasal spray. Highly recommended ENT specialist.', verifiedVisit: true }
+    ]
+  },
+
+  // 10. Ophthalmology - Prof. Dr. Shahidul Huq
+  {
+    id: 'doc-10',
+    slug: 'prof-dr-shahidul-huq',
+    name: 'Prof. Dr. Shahidul Huq',
+    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-21450',
+    degrees: 'MBBS (DMC), FCPS (Ophthalmology), FICO (UK)',
+    specialty: 'Ophthalmology (Eye)',
+    subSpecialties: ['Micro-Incisional Cataract Phaco', 'Glaucoma Management', 'Retinal Diagnostics', 'Refractive Vision'],
+    experienceYears: 24,
+    rating: 4.9,
+    reviewCount: 1440,
+    hospital: {
+      id: 'hosp-1',
+      slug: 'united-hospital-dhaka',
+      name: 'United Hospital, Dhaka',
+      location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
+    },
+    fees: { inPerson: 1300, online: 1000 },
+    nextAvailableSlot: {
+      date: 'Today, 30 Oct',
+      time: '03:00 PM – 06:00 PM',
+      formatted: 'Today, 03:00 PM',
+    },
+    about: 'Pioneering eye surgeon in Dhaka with over 15,000 successful cataract and laser vision procedures. Renowned for patient clarity and advanced ophthalmic diagnostics.',
+    areasOfExpertise: ['Cataract Surgery', 'Blurry Vision & Refraction', 'Glaucoma & Eye Pressure', 'Dry Eye & Computer Vision Syndrome'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'FCPS (Ophthalmology)', institution: 'BCPS' },
+      { degree: 'FICO', institution: 'International Council of Ophthalmology (UK)' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Saturday', slots: ['03:00 PM', '04:00 PM', '05:00 PM'], type: 'in-person' },
+      { day: 'Wednesday', slots: ['03:00 PM', '04:00 PM'], type: 'in-person' },
+      { day: 'Thursday', slots: ['07:00 PM', '08:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-eye1', patientName: 'Syed Anwar', rating: 5, date: '2 weeks ago', comment: 'My father’s cataract surgery was painless and restored crystal-clear 20/20 vision.', verifiedVisit: true }
+    ]
+  },
+
+  // 11. Nephrology & Urology - Dr. Aminul Islam
+  {
+    id: 'doc-11',
+    slug: 'dr-aminul-islam',
+    name: 'Dr. Aminul Islam',
+    avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-39820',
+    degrees: 'MBBS (DMC), MD (Nephrology, BSMMU), Fellowship in Renal Care (Singapore)',
+    specialty: 'Nephrology & Urology',
+    subSpecialties: ['Chronic Kidney Disease', 'Dialysis Protocol', 'Kidney Stones', 'Urinary Tract Infection'],
+    experienceYears: 13,
+    rating: 4.9,
+    reviewCount: 1090,
+    hospital: {
+      id: 'hosp-1',
+      slug: 'united-hospital-dhaka',
+      name: 'United Hospital, Dhaka',
+      location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
+    },
+    fees: { inPerson: 1200, online: 900 },
+    nextAvailableSlot: {
+      date: 'Tomorrow, 31 Oct',
+      time: '11:00 AM – 02:00 PM',
+      formatted: 'Tomorrow, 11:00 AM',
+    },
+    about: 'Consultant Nephrologist dedicated to halting kidney damage progression, managing proteinuria, hypertensive renal disease, recurrent UTIs, and urinary calculi.',
+    areasOfExpertise: ['Burning Urination & UTI', 'Kidney Stone Management', 'Creatinine Control & CKD', 'Proteinuria (Urine Protein)'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'MD (Nephrology)', institution: 'BSMMU' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Monday', slots: ['11:00 AM', '12:00 PM', '01:00 PM'], type: 'in-person' },
+      { day: 'Wednesday', slots: ['11:00 AM', '12:00 PM'], type: 'in-person' },
+      { day: 'Friday', slots: ['06:00 PM', '07:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-neph1', patientName: 'Rezaul Karim', rating: 5, date: '3 weeks ago', comment: 'Dr. Aminul’s dietary and medical guidelines lowered my serum creatinine significantly.', verifiedVisit: true }
+    ]
+  },
+
+  // 12. Pulmonology - Prof. Dr. Asifur Rahman
+  {
+    id: 'doc-12',
+    slug: 'prof-dr-asifur-rahman',
+    name: 'Prof. Dr. Asifur Rahman',
+    avatar: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-26510',
+    degrees: 'MBBS (DMC), FCPS (Pulmonology), FCCP (USA)',
+    specialty: 'Pulmonology (Chest & Lungs)',
+    subSpecialties: ['Bronchial Asthma', 'COPD & Emphysema', 'Post-COVID Lung Care', 'Sleep Apnea & CPAP'],
+    experienceYears: 19,
+    rating: 4.9,
+    reviewCount: 1280,
+    hospital: {
+      id: 'hosp-3',
+      slug: 'evercare-hospital-dhaka',
+      name: 'Evercare Hospital, Dhaka',
+      location: 'Plot 81, Block E, Bashundhara R/A, Dhaka 1229',
+    },
+    fees: { inPerson: 1500, online: 1100 },
+    nextAvailableSlot: {
+      date: 'Today, 30 Oct',
+      time: '04:00 PM – 07:00 PM',
+      formatted: 'Today, 04:00 PM',
+    },
+    about: 'Professor of Respiratory Medicine with profound expertise in chronic cough, allergy-induced bronchospasm, inhaler therapy optimization, and obstructive sleep apnea.',
+    areasOfExpertise: ['Chronic & Persistent Cough', 'Bronchial Asthma & Wheezing', 'COPD & Chest Congestion', 'Pneumonia & Lung Infections'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'FCPS (Pulmonology)', institution: 'BCPS' },
+      { degree: 'FCCP', institution: 'American College of Chest Physicians' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Saturday', slots: ['04:00 PM', '05:00 PM', '06:00 PM'], type: 'in-person' },
+      { day: 'Tuesday', slots: ['04:00 PM', '05:00 PM'], type: 'in-person' },
+      { day: 'Thursday', slots: ['08:00 PM', '09:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-pulm1', patientName: 'Shahadat Hossain', rating: 5, date: '1 month ago', comment: 'Had chronic cough for 4 months. Prof. Asifur identified the exact allergic trigger.', verifiedVisit: true }
+    ]
+  },
+
+  // 13. Endocrinology & Diabetology - Dr. Tahmina Akter
+  {
+    id: 'doc-13',
+    slug: 'dr-tahmina-akter',
+    name: 'Dr. Tahmina Akter',
+    avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-42110',
+    degrees: 'MBBS (DMC), MD (Endocrinology, BIRDEM), MACE (USA)',
+    specialty: 'Endocrinology & Diabetology',
+    subSpecialties: ['Type 1 & 2 Diabetes', 'Thyroid Nodules & Goiter', 'Metabolic Syndrome', 'Obesity Management'],
+    experienceYears: 12,
+    rating: 4.9,
+    reviewCount: 1310,
+    hospital: {
+      id: 'hosp-2',
+      slug: 'square-hospital-dhaka',
+      name: 'Square Hospital, Dhaka',
+      location: '18/F Bir Uttam Qazi Nuruzzaman Sarak, West Panthapath, Dhaka 1205',
+    },
+    fees: { inPerson: 1200, online: 900 },
+    nextAvailableSlot: {
+      date: 'Tomorrow, 31 Oct',
+      time: '03:00 PM – 06:00 PM',
+      formatted: 'Tomorrow, 03:00 PM',
+    },
+    about: 'Specialist Diabetologist and Endocrinologist trained at BIRDEM. Focuses on safe glucose targets, preventing diabetic neuropathy and retinopathy, and thyroid hormone balance.',
+    areasOfExpertise: ['High Blood Sugar & HbA1c Control', 'Hypothyroidism & Hyperthyroidism', 'Gestational Diabetes (Pregnancy)', 'Weight & Metabolism'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'MD (Endocrinology)', institution: 'BIRDEM / BSMMU' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Sunday', slots: ['03:00 PM', '04:00 PM', '05:00 PM'], type: 'in-person' },
+      { day: 'Wednesday', slots: ['03:00 PM', '04:00 PM'], type: 'in-person' },
+      { day: 'Friday', slots: ['07:00 PM', '08:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-endo1', patientName: 'Shamima Nasrin', rating: 5, date: '2 weeks ago', comment: 'My HbA1c went from 9.4% down to 6.8% under Dr. Tahmina’s attentive supervision.', verifiedVisit: true }
+    ]
+  },
+
+  // 14. Psychiatry & Mental Health - Dr. Shamsul Huda
+  {
+    id: 'doc-14',
+    slug: 'dr-shamsul-huda',
+    name: 'Dr. Shamsul Huda',
+    avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-36709',
+    degrees: 'MBBS (DMC), FCPS (Psychiatry), Member European Psychiatric Association',
+    specialty: 'Psychiatry & Mental Health',
+    subSpecialties: ['Clinical Depression', 'Panic Attacks & GAD', 'Insomnia Therapy', 'Cognitive Stress Management'],
+    experienceYears: 13,
+    rating: 4.9,
+    reviewCount: 980,
+    hospital: {
+      id: 'hosp-2',
+      slug: 'square-hospital-dhaka',
+      name: 'Square Hospital, Dhaka',
+      location: '18/F Bir Uttam Qazi Nuruzzaman Sarak, West Panthapath, Dhaka 1205',
+    },
+    fees: { inPerson: 1200, online: 1000 },
+    nextAvailableSlot: {
+      date: 'Tomorrow, 31 Oct',
+      time: '06:00 PM – 09:00 PM',
+      formatted: 'Tomorrow, 06:00 PM',
+    },
+    about: 'Compassionate Consultant Psychiatrist with deep expertise in non-judgmental counseling, clinical medication balance, panic disorder recovery, and restorative sleep hygiene.',
+    areasOfExpertise: ['Anxiety & Panic Disorders', 'Depression & Mood Stabilization', 'Severe Insomnia & Sleep Reset', 'Stress & Obsessive Thoughts'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'FCPS (Psychiatry)', institution: 'BCPS' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Saturday', slots: ['06:00 PM', '07:00 PM', '08:00 PM'], type: 'in-person' },
+      { day: 'Tuesday', slots: ['06:00 PM', '07:00 PM'], type: 'in-person' },
+      { day: 'Thursday', slots: ['08:00 PM', '09:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-psych1', patientName: 'Arifuzzaman', rating: 5, date: '1 month ago', comment: 'Dr. Shamsul listens with utmost kindness and helped me overcome debilitating panic attacks.', verifiedVisit: true }
+    ]
+  },
+
+  // 15. General & Laparoscopic Surgery - Prof. Dr. Nazmul Karim
+  {
+    id: 'doc-15',
+    slug: 'prof-dr-nazmul-karim',
+    name: 'Prof. Dr. Nazmul Karim',
+    avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=90',
+    isVerified: true,
+    isDemo: true,
+    bmdcNumber: 'A-23190',
+    degrees: 'MBBS (DMC), FCPS (Surgery), FRCS (Glasgow)',
+    specialty: 'General & Laparoscopic Surgery',
+    subSpecialties: ['Laparoscopic Cholecystectomy', 'Hernia Repair', 'Colorectal Surgery', 'Appendicitis'],
+    experienceYears: 21,
+    rating: 4.9,
+    reviewCount: 1140,
+    hospital: {
+      id: 'hosp-1',
+      slug: 'united-hospital-dhaka',
+      name: 'United Hospital, Dhaka',
+      location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
+    },
+    fees: { inPerson: 1500, online: 1100 },
+    nextAvailableSlot: {
+      date: 'Today, 30 Oct',
+      time: '04:00 PM – 07:00 PM',
+      formatted: 'Today, 04:00 PM',
+    },
+    about: 'Distinguished Professor of General & Minimal Invasive Surgery. Specialized in day-care laparoscopic gallbladder surgery, ventral hernia repair, and modern anorectal procedures.',
+    areasOfExpertise: ['Gallbladder Stones (Laparoscopic)', 'Inguinal & Abdominal Hernia', 'Appendicitis', 'Hemorrhoids & Piles'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College' },
+      { degree: 'FCPS (Surgery)', institution: 'BCPS' },
+      { degree: 'FRCS', institution: 'Royal College of Physicians and Surgeons of Glasgow' },
+    ],
+    languages: ['Bangla', 'English'],
+    schedule: [
+      { day: 'Sunday', slots: ['04:00 PM', '05:00 PM', '06:00 PM'], type: 'in-person' },
+      { day: 'Tuesday', slots: ['04:00 PM', '05:00 PM'], type: 'in-person' },
+      { day: 'Thursday', slots: ['07:00 PM', '08:00 PM'], type: 'online' },
+    ],
+    reviews: [
+      { id: 'rev-surg1', patientName: 'Mizanur Rahman', rating: 5, date: '3 weeks ago', comment: 'Had laparoscopic gallbladder stone surgery at United Hospital. Was discharged the next morning with minimal pain.', verifiedVisit: true }
     ]
   }
 ];
@@ -1096,5 +1602,86 @@ export const SYMPTOM_DATA = [
     urgency: 'Low to Moderate',
     guidance: 'Hormonal and menstrual irregularities are managed with tailored ultrasound and gynecological consultation.',
     recommendedDoctorSlug: 'dr-nusrat-jahan'
+  },
+  {
+    category: 'Child Health & Pediatrics',
+    symptoms: ['High fever in child', 'Persistent cough & wheeze', 'Childhood diarrhea', 'Refusing feeds', 'Growth delay'],
+    specialty: 'Pediatrics',
+    urgency: 'Moderate to High',
+    guidance: 'Infants and toddlers with high fever or feeding difficulties should be promptly examined by a specialized child pediatrician.',
+    recommendedDoctorSlug: 'prof-dr-mehedi-hasan'
+  },
+  {
+    category: 'Stomach, Acid & Digestion',
+    symptoms: ['Stomach pain / burning', 'Acid reflux / GERD', 'Bloating & gas', 'Fatty liver / elevated SGPT', 'Chronic constipation'],
+    specialty: 'Gastroenterology & Hepatology',
+    urgency: 'Moderate',
+    guidance: 'Upper abdominal burning, peptic acid erosion, or fatty liver requires evaluation by a Gastroenterologist and possible endoscopy.',
+    recommendedDoctorSlug: 'prof-dr-tariqul-islam'
+  },
+  {
+    category: 'Skin, Rash & Hair',
+    symptoms: ['Severe skin itching / rash', 'Eczema & psoriasis', 'Acne / pimples', 'Fungal ringworm infection', 'Excessive hair fall'],
+    specialty: 'Dermatology & Venereology',
+    urgency: 'Low',
+    guidance: 'Skin lesions, chronic allergies, or progressive scalp hair thinning are managed by a certified Dermatologist.',
+    recommendedDoctorSlug: 'dr-sabrina-karim'
+  },
+  {
+    category: 'Ear, Nose & Throat (ENT)',
+    symptoms: ['Sore throat / pain swallowing', 'Ear ache or discharge', 'Ringing in ears (tinnitus)', 'Sinus headache & blockage'],
+    specialty: 'ENT (Ear, Nose & Throat)',
+    urgency: 'Low to Moderate',
+    guidance: 'Recurrent sinusitis, tonsillitis, or hearing impairment should be evaluated with an ENT endoscope and audiometry.',
+    recommendedDoctorSlug: 'dr-m-a-matin'
+  },
+  {
+    category: 'Eyes & Vision',
+    symptoms: ['Blurry vision', 'Eye redness & pain', 'Cataract cloudiness', 'Watery discharge', 'Severe computer eye strain'],
+    specialty: 'Ophthalmology (Eye)',
+    urgency: 'Moderate',
+    guidance: 'Sudden visual blurring, elevated eye pressure (glaucoma), or cataracts should be screened by an Ophthalmologist.',
+    recommendedDoctorSlug: 'prof-dr-shahidul-huq'
+  },
+  {
+    category: 'Kidneys & Urinary',
+    symptoms: ['Burning urination / UTI', 'Flank / kidney pain', 'Kidney stone colic', 'Blood in urine', 'Elevated creatinine'],
+    specialty: 'Nephrology & Urology',
+    urgency: 'Moderate to High',
+    guidance: 'Kidney pain, urinary burning, or reduced urine output demands kidney ultrasound, urine R/M/E, and Nephrologist review.',
+    recommendedDoctorSlug: 'dr-aminul-islam'
+  },
+  {
+    category: 'Lungs & Breathing',
+    symptoms: ['Persistent dry or wet cough', 'Bronchial asthma', 'Wheezing at night', 'Shortness of breath', 'Chest congestion'],
+    specialty: 'Pulmonology (Chest & Lungs)',
+    urgency: 'Moderate to High',
+    guidance: 'Chronic respiratory cough, asthma flare-ups, and COPD require spirometry lung function testing and Pulmonology care.',
+    recommendedDoctorSlug: 'prof-dr-asifur-rahman'
+  },
+  {
+    category: 'Diabetes & Hormones',
+    symptoms: ['High blood sugar / HbA1c', 'Thyroid swelling (goiter)', 'Unexplained weight changes', 'Chronic lethargy'],
+    specialty: 'Endocrinology & Diabetology',
+    urgency: 'Moderate',
+    guidance: 'Insulin adjustment, diabetic organ protection, and thyroid hormone balancing are optimized by an Endocrinologist.',
+    recommendedDoctorSlug: 'dr-tahmina-akter'
+  },
+  {
+    category: 'Mental Health & Sleep',
+    symptoms: ['Debilitating anxiety & panic', 'Persistent sadness / depression', 'Severe insomnia', 'Chronic work burnout'],
+    specialty: 'Psychiatry & Mental Health',
+    urgency: 'Moderate',
+    guidance: 'Compassionate psychiatric assessment helps restore sleep architecture, panic recovery, and emotional resilience.',
+    recommendedDoctorSlug: 'dr-shamsul-huda'
+  },
+  {
+    category: 'Surgical & Hernia',
+    symptoms: ['Abdominal or groin bulge (hernia)', 'Gallbladder stone colic', 'Painful piles / hemorrhoids', 'Suspicious lump'],
+    specialty: 'General & Laparoscopic Surgery',
+    urgency: 'Moderate to High',
+    guidance: 'Hernias, symptomatic gallstones, and soft tissue masses are treated with modern minimally-invasive laparoscopic surgery.',
+    recommendedDoctorSlug: 'prof-dr-nazmul-karim'
   }
 ];
+

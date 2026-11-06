@@ -30,14 +30,9 @@ export default function DoctorsDirectoryPage() {
   const [sortBy, setSortBy] = useState<'recommended' | 'rating' | 'fee-asc' | 'experience'>('recommended');
   const [bookingDoctor, setBookingDoctor] = useState<Doctor | null>(null);
 
-  const specialties = [
-    'All',
-    'Internal Medicine Specialist',
-    'Cardiology',
-    'Orthopedics',
-    'Gynecology & Obstetrics',
-    'Neurology',
-  ];
+  const specialties = useMemo(() => {
+    return ['All', ...Array.from(new Set(DOCTORS.map((d) => d.specialty)))];
+  }, []);
 
   const locations = ['All', 'Gulshan', 'Panthapath', 'Bashundhara', 'Dhanmondi', 'Uttara'];
 

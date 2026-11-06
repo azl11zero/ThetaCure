@@ -180,8 +180,24 @@ export default function AiAssistantPage() {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Bar */}
-        <div className="p-4 bg-white border-t border-gray-100">
+        {/* Input Bar with Quick Symptom Pills */}
+        <div className="p-4 bg-white border-t border-gray-100 space-y-3">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+            {(language === 'bn'
+              ? ['বুকে ব্যথা ও অস্বস্তি', 'হাঁটু ও কোমর ব্যথা', 'পেটে জ্বালাপোড়া ও এসিডিটি', 'বাচ্চার জ্বর ও কাশি', 'মাথা ব্যথা ও মাথা ঘোরানো']
+              : ['Chest pain & tightness', 'Knee & lower back pain', 'Burning stomach & acid', 'Baby fever & cough', 'Migraine & dizziness']
+            ).map((sugg) => (
+              <button
+                key={sugg}
+                type="button"
+                onClick={() => handleSend(sugg)}
+                className="px-3 py-1 bg-gray-50 hover:bg-red-50 hover:text-[#D91F2B] border border-gray-200 text-xs rounded-full whitespace-nowrap transition text-gray-700"
+              >
+                {sugg}
+              </button>
+            ))}
+          </div>
+
           <form
             onSubmit={(e) => {
               e.preventDefault();

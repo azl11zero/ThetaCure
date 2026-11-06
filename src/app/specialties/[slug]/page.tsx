@@ -15,16 +15,28 @@ import {
   Activity,
   Users,
   Brain,
-  Baby
+  Baby,
+  Sparkles,
+  Eye
 } from 'lucide-react';
 import { SPECIALTIES, DOCTORS, HOSPITALS } from '@/lib/data';
 
 export default function SpecialtyDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
   const specialty = SPECIALTIES.find((s) => s.slug === resolvedParams.slug) || SPECIALTIES[0];
-  const doctors = DOCTORS.filter((d) => d.specialty.toLowerCase().includes(specialty.name.toLowerCase()));
+  const doctors = DOCTORS.filter((d) => {
+    const specLower = specialty.name.toLowerCase();
+    const docSpec = d.specialty.toLowerCase();
+    return (
+      docSpec.includes(specLower) ||
+      specLower.includes(docSpec) ||
+      d.subSpecialties.some((sub) => sub.toLowerCase().includes(specialty.slug.replace('-', ' ')))
+    );
+  });
 
-  const iconMap: Record<string, any> = { Stethoscope, HeartPulse, Activity, Users, Brain, Baby };
+  const displayDoctors = doctors.length > 0 ? doctors : [DOCTORS[0]];
+
+  const iconMap: Record<string, any> = { Stethoscope, HeartPulse, Activity, Users, Brain, Baby, Sparkles, Eye, ShieldCheck };
   const IconComp = iconMap[specialty.icon] || Stethoscope;
 
   return (
@@ -54,7 +66,7 @@ export default function SpecialtyDetailPage({ params }: { params: Promise<{ slug
       <div className="space-y-4">
         <h2 className="text-xl font-bold text-gray-900">Available {specialty.name} Consultants</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {doctors.map((doc) => (
+          {displayDoctors.map((doc) => (
             <div
               key={doc.id}
               className="bg-white rounded-3xl p-5 border border-gray-200 hover:border-gray-300 shadow-sm flex flex-col justify-between"
