@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -13,6 +13,7 @@ import {
   HeartPulse,
   ArrowRight,
   ChevronRight,
+  ChevronLeft,
   Star,
   Sparkles,
   PhoneCall,
@@ -30,6 +31,31 @@ import { useLanguage } from '@/components/LanguageContext';
 import BookingModal from '@/components/BookingModal';
 import { Doctor } from '@/lib/types';
 
+const HERO_SLIDES = [
+  {
+    id: 'maruf',
+    name: 'Dr. Maruf Allam Saran',
+    specialty: 'Senior Consultant Cardiologist',
+    tag: 'Featured Cardiologist',
+    image: '/images/dr_maruf_slide_v1.jpg',
+    slug: 'dr-maruf-allam-saran',
+    rating: '5.0',
+    reviews: '2,450',
+    hospital: 'United Hospital, Dhaka',
+  },
+  {
+    id: 'sadia',
+    name: 'Dr. Sadia Islam Prome',
+    specialty: 'Consultant Gastroenterologist',
+    tag: 'Featured Gastroenterologist',
+    image: '/images/dr_sadia_slide_v1.jpg',
+    slug: 'dr-sadia-islam-prome',
+    rating: '4.9',
+    reviews: '1,820',
+    hospital: 'United Hospital, Dhaka',
+  },
+];
+
 export default function HomePage() {
   const router = useRouter();
   const { t } = useLanguage();
@@ -38,6 +64,17 @@ export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [location, setLocation] = useState('Dhaka');
   const [selectedDoctorForBooking, setSelectedDoctorForBooking] = useState<Doctor | null>(null);
+
+  const [heroSlide, setHeroSlide] = useState(0);
+  const [isHeroPaused, setIsHeroPaused] = useState(false);
+
+  useEffect(() => {
+    if (isHeroPaused) return;
+    const timer = setInterval(() => {
+      setHeroSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [isHeroPaused]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -193,79 +230,110 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Hero Doctor Image Matching UI Design Reference */}
+            {/* Right Column: Hero Doctor Slideshow (Dr. Maruf Allam Saran & Dr. Sadia Islam Prome) */}
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[420px] aspect-[4/4.4] rounded-3xl overflow-hidden bg-gradient-to-tr from-rose-50 via-gray-50/80 to-white border border-gray-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] flex items-end justify-center group">
-                <Image
-                  src="/images/hero_doctor.jpg"
-                  alt="Dr. Maruf Allam Saran - Senior Consultant Cardiologist"
-                  fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-
-                {/* Floating Top Badge: Featured Cardiologist */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md rounded-full px-3.5 py-1.5 border border-white/70 shadow-md flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="text-xs font-bold text-gray-800">Featured Cardiologist</span>
-                </div>
-
-                {/* Floating Verified Doctor Badge with Credentials */}
-                <Link
-                  href="/doctors/dr-maruf-allam-saran"
-                  className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 border border-white/70 shadow-xl flex items-center justify-between gap-3 group/doc hover:bg-white transition-all"
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <div className="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center text-[#D91F2B] flex-shrink-0 font-bold text-xs">
-                      ★ 5.0
-                    </div>
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-1.5">
-                        <h5 className="text-xs sm:text-sm font-bold text-gray-900 truncate group-hover/doc:text-[#D91F2B] transition">
-                          Dr. Maruf Allam Saran
-                        </h5>
-                        <span className="text-[10px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded font-semibold flex-shrink-0">
-                          BMDC Verified
-                        </span>
-                      </div>
-                      <p className="text-[11px] text-gray-500 truncate">
-                        Senior Consultant Cardiologist • United Hospital
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0 bg-red-50 text-[#D91F2B] px-3 py-1.5 rounded-xl text-xs font-bold group-hover/doc:bg-[#D91F2B] group-hover/doc:text-white transition">
-                    Book
-                  </div>
-                </Link>
-              </div>
-
-              {/* Floating Second Doctor Card: Dr. Sadia Islam Prome (Gastroenterologist) */}
-              <Link
-                href="/doctors/dr-sadia-islam-prome"
-                className="hidden sm:flex absolute -bottom-5 -left-4 lg:-left-10 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 border border-gray-200/90 shadow-2xl items-center gap-3 hover:border-red-200 hover:scale-105 transition-all group/sadia z-20 max-w-[270px]"
+              <div
+                className="relative w-full max-w-[420px] aspect-[4/4.5] rounded-3xl overflow-hidden bg-gradient-to-tr from-gray-100 via-gray-50 to-white border border-gray-200/90 shadow-[0_12px_35px_rgba(0,0,0,0.08)] flex flex-col justify-between group"
+                onMouseEnter={() => setIsHeroPaused(true)}
+                onMouseLeave={() => setIsHeroPaused(false)}
               >
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
-                  <Image
-                    src="/images/dr_sadia.jpg"
-                    alt="Dr. Sadia Islam Prome"
-                    fill
-                    className="object-cover"
-                  />
+                {/* Slides with High-Resolution Photos */}
+                {HERO_SLIDES.map((slide, idx) => (
+                  <Link
+                    key={slide.id}
+                    href={`/doctors/${slide.slug}`}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                      heroSlide === idx ? 'opacity-100 pointer-events-auto z-10' : 'opacity-0 pointer-events-none z-0'
+                    }`}
+                  >
+                    <Image
+                      src={slide.image}
+                      alt={`${slide.name} - ${slide.specialty}`}
+                      fill
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                      priority={idx === 0}
+                    />
+                    {/* Subtle top & bottom vignette to ensure indicators are legible without obstructing portrait */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/25 pointer-events-none" />
+                  </Link>
+                ))}
+
+                {/* Top Header Badge (Clean & unobtrusive) */}
+                <div className="relative z-20 p-4 flex items-center justify-between pointer-events-none">
+                  <div className="bg-white/95 backdrop-blur-md rounded-full px-3.5 py-1.5 border border-white/70 shadow-md flex items-center gap-2 pointer-events-auto">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="text-xs font-bold text-gray-800">
+                      {HERO_SLIDES[heroSlide].tag}
+                    </span>
+                  </div>
+                  <div className="bg-black/50 backdrop-blur-md text-white rounded-full px-2.5 py-1 text-[11px] font-semibold border border-white/20">
+                    {heroSlide + 1} / {HERO_SLIDES.length}
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <div className="text-[10px] font-bold text-[#D91F2B] flex items-center gap-1">
-                    <span>Gastroenterologist</span>
-                    <span className="text-amber-500">★ 4.9</span>
-                  </div>
-                  <div className="text-xs font-bold text-gray-900 truncate group-hover/sadia:text-[#D91F2B] transition">
-                    Dr. Sadia Islam Prome
-                  </div>
-                  <div className="text-[10px] text-gray-500 truncate">
-                    United Hospital, Dhaka
+
+                {/* Slideshow Chevrons (Prev / Next Buttons) */}
+                <div className="absolute inset-y-0 inset-x-2 flex items-center justify-between z-20 pointer-events-none">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setHeroSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+                    }}
+                    className="w-9 h-9 rounded-full bg-white/85 hover:bg-white text-gray-800 backdrop-blur-md shadow-lg flex items-center justify-center pointer-events-auto transition-all opacity-70 group-hover:opacity-100 hover:scale-105 active:scale-95"
+                    aria-label="Previous doctor"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setHeroSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+                    }}
+                    className="w-9 h-9 rounded-full bg-white/85 hover:bg-white text-gray-800 backdrop-blur-md shadow-lg flex items-center justify-center pointer-events-auto transition-all opacity-70 group-hover:opacity-100 hover:scale-105 active:scale-95"
+                    aria-label="Next doctor"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Bottom Bar: Clear Name & Navigation Dots (Zero overlapping profile card) */}
+                <div className="relative z-20 p-4 sm:p-5 flex items-end justify-between pointer-events-none">
+                  <Link
+                    href={`/doctors/${HERO_SLIDES[heroSlide].slug}`}
+                    className="pointer-events-auto text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] hover:text-red-200 transition"
+                  >
+                    <div className="flex items-center gap-1.5 text-xs text-amber-300 font-bold mb-0.5">
+                      <span>★ {HERO_SLIDES[heroSlide].rating}</span>
+                      <span className="text-white/80 font-normal">({HERO_SLIDES[heroSlide].reviews} reviews)</span>
+                    </div>
+                    <div className="text-base sm:text-lg font-bold leading-tight">
+                      {HERO_SLIDES[heroSlide].name}
+                    </div>
+                    <div className="text-xs text-white/90">
+                      {HERO_SLIDES[heroSlide].specialty} • {HERO_SLIDES[heroSlide].hospital}
+                    </div>
+                  </Link>
+
+                  {/* Indicator Dots */}
+                  <div className="flex items-center gap-1.5 bg-black/50 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-white/20 pointer-events-auto flex-shrink-0">
+                    {HERO_SLIDES.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setHeroSlide(i)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          heroSlide === i ? 'w-5 bg-[#D91F2B]' : 'w-2 bg-white/60 hover:bg-white'
+                        }`}
+                        aria-label={`Go to slide ${i + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
