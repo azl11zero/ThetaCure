@@ -161,8 +161,8 @@ export default function HomePage() {
                 {/* Form Controls */}
                 <form onSubmit={handleSearchSubmit} className="flex flex-col sm:flex-row items-center gap-3">
                   {/* Search Query Input */}
-                  <div className="relative flex-1 w-full">
-                    <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <div className="relative flex-1 min-w-0 w-full">
+                    <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <input
                       type="text"
                       value={searchQuery}
@@ -174,17 +174,17 @@ export default function HomePage() {
                           ? t.search_test_placeholder
                           : t.search_hospital_placeholder
                       }
-                      className="w-full pl-10 pr-4 py-3 text-sm text-gray-900 bg-gray-50/80 hover:bg-gray-100/60 focus:bg-white border border-gray-200 focus:border-[#D91F2B] rounded-xl focus:outline-none transition-all placeholder:text-gray-400"
+                      className="w-full pl-10 pr-4 h-12 text-sm text-gray-900 bg-gray-50/80 hover:bg-gray-100/60 focus:bg-white border border-gray-200 focus:border-[#D91F2B] rounded-xl focus:outline-none transition-all placeholder:text-gray-400"
                     />
                   </div>
 
                   {/* Location Dropdown */}
-                  <div className="relative w-full sm:w-44">
+                  <div className="relative w-full sm:w-44 sm:flex-shrink-0">
                     <MapPin className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <select
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
-                      className="w-full appearance-none pl-9 pr-8 py-3 text-sm font-medium text-gray-700 bg-gray-50/80 hover:bg-gray-100/60 border border-gray-200 focus:border-[#D91F2B] rounded-xl focus:outline-none cursor-pointer transition"
+                      className="w-full appearance-none pl-9 pr-8 h-12 text-sm font-medium text-gray-700 bg-gray-50/80 hover:bg-gray-100/60 border border-gray-200 focus:border-[#D91F2B] rounded-xl focus:outline-none cursor-pointer transition"
                     >
                       <option value="Dhaka">Dhaka</option>
                       <option value="Gulshan">Gulshan</option>
@@ -201,7 +201,7 @@ export default function HomePage() {
                   {/* Red Search Submit Button with Arrow */}
                   <button
                     type="submit"
-                    className="w-full sm:w-13 sm:h-12 px-4 py-3 sm:p-0 flex items-center justify-center bg-[#D91F2B] hover:bg-[#C01823] active:scale-95 text-white rounded-xl shadow-[0_2px_10px_rgba(217,31,43,0.3)] hover:shadow-[0_4px_14px_rgba(217,31,43,0.4)] transition-all flex-shrink-0"
+                    className="w-full sm:w-12 h-12 flex items-center justify-center bg-[#D91F2B] hover:bg-[#C01823] active:scale-95 text-white rounded-xl shadow-[0_2px_10px_rgba(217,31,43,0.3)] hover:shadow-[0_4px_14px_rgba(217,31,43,0.4)] transition-all flex-shrink-0"
                     aria-label="Submit Search"
                   >
                     <ArrowRight className="w-5 h-5" />
