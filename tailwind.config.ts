@@ -29,7 +29,9 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        serif: ["var(--font-seasons)", "'The Seasons'", "Georgia", "serif"],
+        seasons: ["var(--font-seasons)", "'The Seasons'", "Georgia", "serif"],
+        heading: ["var(--font-seasons)", "'The Seasons'", "Georgia", "serif"],
       },
       borderRadius: {
         'card': '16px',

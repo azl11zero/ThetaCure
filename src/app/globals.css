@@ -2,9 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'The Seasons';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/TheSeasons-Regular.woff2') format('woff2'),
+       url('/fonts/TheSeasons-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'The Seasons';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/TheSeasons-Bold.woff2') format('woff2');
+}
+
 @layer base {
   :root {
     --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-seasons: 'The Seasons', Georgia, serif;
   }
 
   body {
@@ -13,6 +31,24 @@
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Editorial typography with 'The Seasons' font & symmetric hierarchy */
+  h1, h2, h3, .font-heading, .font-seasons {
+    font-family: var(--font-seasons), 'The Seasons', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+
+  h1 {
+    line-height: 1.15;
+  }
+
+  h2 {
+    line-height: 1.25;
+  }
+
+  h3 {
+    line-height: 1.35;
   }
 }
 

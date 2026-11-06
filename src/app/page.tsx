@@ -407,10 +407,10 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight font-heading">
               {t.sec_health_tips}
             </h2>
-            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Simple, expert-backed guidance for your daily wellness</p>
+            <p className="text-sm text-gray-500 mt-1">Simple, expert-backed guidance for your daily wellness</p>
           </div>
           <Link
             href="/health-tips"
@@ -530,8 +530,10 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">{t.sec_popular_doctors}</h2>
-            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Renowned professors and specialized clinicians</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight font-heading">
+              {t.sec_popular_doctors}
+            </h2>
+            <p className="text-sm text-gray-500 mt-1">Renowned professors and specialized clinicians</p>
           </div>
           <Link
             href="/doctors"
@@ -609,8 +611,8 @@ export default function HomePage() {
           <div className="lg:col-span-6 bg-white rounded-2xl p-6 border border-gray-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
             <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
               <div>
-                <h3 className="font-bold text-gray-900 text-lg tracking-tight">{t.sec_popular_tests}</h3>
-                <p className="text-xs text-gray-500">Standardized pricing at accredited labs</p>
+                <h3 className="font-bold text-gray-900 text-xl tracking-tight font-heading">{t.sec_popular_tests}</h3>
+                <p className="text-sm text-gray-500 mt-0.5">Standardized pricing at accredited labs</p>
               </div>
               <Link href="/diagnostics" className="text-xs font-semibold text-[#D91F2B] hover:underline flex items-center">
                 View All Tests <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
@@ -647,8 +649,8 @@ export default function HomePage() {
           <div className="lg:col-span-6 bg-white rounded-2xl p-6 border border-gray-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
             <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
               <div>
-                <h3 className="font-bold text-gray-900 text-lg tracking-tight">{t.sec_health_packages}</h3>
-                <p className="text-xs text-gray-500">Comprehensive preventive health checkups</p>
+                <h3 className="font-bold text-gray-900 text-xl tracking-tight font-heading">{t.sec_health_packages}</h3>
+                <p className="text-sm text-gray-500 mt-0.5">Comprehensive preventive health checkups</p>
               </div>
               <Link href="/hospitals/united-hospital-dhaka#packages" className="text-xs font-semibold text-[#D91F2B] hover:underline flex items-center">
                 View Packages <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
@@ -722,10 +724,10 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight font-heading">
                 {t.app_banner_title}
               </h3>
-              <p className="text-xs sm:text-sm text-gray-500 max-w-md mt-1 leading-relaxed">
+              <p className="text-sm text-gray-500 max-w-md mt-1.5 leading-relaxed">
                 {t.app_banner_subtitle}
               </p>
             </div>
