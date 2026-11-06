@@ -619,7 +619,7 @@ export function processAiQuery(query: string, currentLang: 'en' | 'bn' = 'en'): 
   }
 
   // 6. Default Fallback with Highest Reviewed Doctor
-  const topOverallDoctor = DOCTORS[0]; // Dr. Farzana (1420 reviews, 4.9)
+  const topOverallDoctor = DOCTORS[0]; // Dr. Maruf Allam Saran (2450 reviews, 5.0)
   return {
     id,
     sender: 'assistant',

@@ -198,24 +198,74 @@ export default function HomePage() {
               <div className="relative w-full max-w-[420px] aspect-[4/4.4] rounded-3xl overflow-hidden bg-gradient-to-tr from-rose-50 via-gray-50/80 to-white border border-gray-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] flex items-end justify-center group">
                 <Image
                   src="/images/hero_doctor.jpg"
-                  alt="ThetaCure Healthcare Provider"
+                  alt="Dr. Maruf Allam Saran - Senior Consultant Cardiologist"
                   fill
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-                {/* Floating Verified Trust Badge */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 border border-white/60 shadow-lg flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-[#D91F2B] flex-shrink-0">
-                    <ShieldCheck className="w-5 h-5" />
+                {/* Floating Top Badge: Featured Cardiologist */}
+                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md rounded-full px-3.5 py-1.5 border border-white/70 shadow-md flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="text-xs font-bold text-gray-800">Featured Cardiologist</span>
+                </div>
+
+                {/* Floating Verified Doctor Badge with Credentials */}
+                <Link
+                  href="/doctors/dr-maruf-allam-saran"
+                  className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 border border-white/70 shadow-xl flex items-center justify-between gap-3 group/doc hover:bg-white transition-all"
+                >
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center text-[#D91F2B] flex-shrink-0 font-bold text-xs">
+                      ★ 5.0
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <h5 className="text-xs sm:text-sm font-bold text-gray-900 truncate group-hover/doc:text-[#D91F2B] transition">
+                          Dr. Maruf Allam Saran
+                        </h5>
+                        <span className="text-[10px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded font-semibold flex-shrink-0">
+                          BMDC Verified
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-gray-500 truncate">
+                        Senior Consultant Cardiologist • United Hospital
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-gray-900">100% BMDC Verified Doctors</h5>
-                    <p className="text-[11px] text-gray-500">Accredited partner hospitals across Bangladesh</p>
+                  <div className="flex-shrink-0 bg-red-50 text-[#D91F2B] px-3 py-1.5 rounded-xl text-xs font-bold group-hover/doc:bg-[#D91F2B] group-hover/doc:text-white transition">
+                    Book
+                  </div>
+                </Link>
+              </div>
+
+              {/* Floating Second Doctor Card: Dr. Sadia Islam Prome (Gastroenterologist) */}
+              <Link
+                href="/doctors/dr-sadia-islam-prome"
+                className="hidden sm:flex absolute -bottom-5 -left-4 lg:-left-10 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 border border-gray-200/90 shadow-2xl items-center gap-3 hover:border-red-200 hover:scale-105 transition-all group/sadia z-20 max-w-[270px]"
+              >
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
+                  <Image
+                    src="/images/dr_sadia.jpg"
+                    alt="Dr. Sadia Islam Prome"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-[10px] font-bold text-[#D91F2B] flex items-center gap-1">
+                    <span>Gastroenterologist</span>
+                    <span className="text-amber-500">★ 4.9</span>
+                  </div>
+                  <div className="text-xs font-bold text-gray-900 truncate group-hover/sadia:text-[#D91F2B] transition">
+                    Dr. Sadia Islam Prome
+                  </div>
+                  <div className="text-[10px] text-gray-500 truncate">
+                    United Hospital, Dhaka
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
