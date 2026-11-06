@@ -140,7 +140,7 @@ export default function LoginPage() {
             onClick={() => fillDemoAccount(role)}
             className="text-[11px] font-bold text-[#D91F2B] hover:underline bg-white px-2.5 py-1 rounded-lg border border-red-200 shadow-2xs"
           >
-            Auto-Fill {role === 'patient' ? 'Patient' : role === 'doctor' ? 'Dr. Farzana' : 'Hospital'}
+            Auto-Fill {role === 'patient' ? 'Patient' : role === 'doctor' ? 'Dr. Maruf' : 'Hospital'}
           </button>
         </div>
 

@@ -139,38 +139,48 @@ export const SPECIALTIES: SpecialtyItem[] = [
 ];
 
 export const DOCTORS: Doctor[] = [
-  // 1. Internal Medicine - Dr. Farzana Ahmed
+  // 1. Senior Consultant Cardiologist - Dr. Maruf Allam Saran (Featured Doctor)
   {
     id: 'doc-1',
-    slug: 'dr-farzana-ahmed',
-    name: 'Dr. Farzana Ahmed',
-    avatar: '/images/dr_farzana.jpg',
+    slug: 'dr-maruf-allam-saran',
+    name: 'Dr. Maruf Allam Saran',
+    avatar: '/images/dr_maruf.jpg',
     isVerified: true,
     isDemo: true,
-    bmdcNumber: 'A-49210',
-    degrees: 'MBBS (DMC), MD (Internal Medicine, BSMMU)',
-    specialty: 'Internal Medicine Specialist',
-    subSpecialties: ['Diabetes Management', 'Hypertension', 'Thyroid Disorders', 'General Medicine'],
-    experienceYears: 8,
-    rating: 4.9,
-    reviewCount: 1420,
+    bmdcNumber: 'A-41289',
+    degrees: 'MBBS, MD, DM (Cardiology), PhD, DSc, FCPS, FRCP, FACC, FESC',
+    specialty: 'Cardiology',
+    subSpecialties: ['Interventional Cardiology', 'Coronary Angioplasty', 'Heart Failure Management', 'Preventive Cardiology'],
+    experienceYears: 18,
+    rating: 5.0,
+    reviewCount: 2450,
     hospital: {
       id: 'hosp-1',
       slug: 'united-hospital-dhaka',
       name: 'United Hospital, Dhaka',
       location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
     },
-    fees: { inPerson: 1000, online: 800 },
+    fees: { inPerson: 1500, online: 1200 },
     nextAvailableSlot: {
       date: 'Tomorrow, 31 Oct',
       time: '10:00 AM – 01:00 PM',
       formatted: 'Tomorrow, 10:00 AM',
     },
-    about: 'A dedicated Internal Medicine specialist with 8+ years of experience in diagnosing and managing a wide range of adult health conditions. Dr. Farzana focuses on holistic disease prevention and evidence-based chronic disease control.',
-    areasOfExpertise: ['Diabetes Management', 'Hypertension & Vascular Care', 'Thyroid & Endocrine Disorders', 'Infectious Diseases', 'Preventive Adult Care', 'Geriatric Medicine'],
+    about: 'Renowned Senior Consultant Cardiologist and Professor of Cardiovascular Sciences with advanced post-doctoral clinical fellowships across UK, USA, and Europe. Dr. Maruf Allam Saran specializes in complex coronary interventions, heart failure reversal, cardiac electrophysiology, and preventative cardiovascular health.',
+    areasOfExpertise: [
+      'Interventional Cardiology & Stenting',
+      'Coronary Artery Disease Management',
+      'Hypertensive & Valvular Heart Disease',
+      'Cardiac Electrophysiology & Arrhythmia',
+      'Preventive Cardiovascular Medicine',
+      'Heart Failure & Critical Cardiac Care'
+    ],
     education: [
       { degree: 'MBBS', institution: 'Dhaka Medical College (DMC)' },
-      { degree: 'MD (Internal Medicine)', institution: 'Bangabandhu Sheikh Mujib Medical University (BSMMU)' },
+      { degree: 'MD, DM (Cardiology)', institution: 'Advanced Cardiovascular Institute' },
+      { degree: 'PhD, DSc (Cardiovascular Sciences)', institution: 'International Academy of Medical Sciences' },
+      { degree: 'FCPS, FRCP', institution: 'Royal College of Physicians' },
+      { degree: 'FACC, FESC', institution: 'American College of Cardiology & European Society of Cardiology' }
     ],
     languages: ['Bangla (Native)', 'English (Fluent)'],
     schedule: [
@@ -182,59 +192,66 @@ export const DOCTORS: Doctor[] = [
       { day: 'Thursday', slots: ['10:00 AM', '12:00 PM', '03:00 PM'], type: 'in-person' },
     ],
     reviews: [
-      { id: 'rev-1', patientName: 'Kazi Mohammad Rafiq', rating: 5, date: '2 weeks ago', comment: 'Dr. Farzana was very patient and explained my hypertension management plan in detail.', verifiedVisit: true },
-      { id: 'rev-2', patientName: 'Shaila Parveen', rating: 5, date: '1 month ago', comment: 'Booked online consultation through ThetaCure. The video call was seamless.', verifiedVisit: true },
-      { id: 'rev-3', patientName: 'Tariqul Islam', rating: 4.8, date: '2 months ago', comment: 'Very polite, attentive, and doesn’t prescribe unnecessary diagnostic tests.', verifiedVisit: true }
+      { id: 'rev-m1', patientName: 'Brigadier Gen. (Retd.) Mostafa Kamal', rating: 5, date: '4 days ago', comment: 'Dr. Maruf Allam Saran is extraordinarily knowledgeable. His intervention for my multi-vessel coronary blockage was masterful.', verifiedVisit: true },
+      { id: 'rev-m2', patientName: 'Shahana Chowdhury', rating: 5, date: '2 weeks ago', comment: 'Clear, polite, and reassuring. He took time to review every ECG and Echo result and adjusted my cardiac medication safely.', verifiedVisit: true },
+      { id: 'rev-m3', patientName: 'Engineer Anisur Rahman', rating: 5, date: '1 month ago', comment: 'Top cardiologist in Bangladesh. Consulted him at United Hospital Gulshan with outstanding outcome.', verifiedVisit: true }
     ]
   },
 
-  // 2. Cardiology - Prof. Dr. A. Rahman
+  // 2. Gastroenterologist - Dr. Sadia Islam Prome (Second Shown Doctor)
   {
     id: 'doc-2',
-    slug: 'prof-dr-a-rahman',
-    name: 'Prof. Dr. A. Rahman',
-    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=90',
+    slug: 'dr-sadia-islam-prome',
+    name: 'Dr. Sadia Islam Prome',
+    avatar: '/images/dr_sadia.jpg',
     isVerified: true,
     isDemo: true,
-    bmdcNumber: 'A-21894',
-    degrees: 'MBBS (DMC), FCPS (Cardiology), FACC (USA)',
-    specialty: 'Cardiology',
-    subSpecialties: ['Interventional Cardiology', 'Heart Failure Management', 'Echocardiography', 'Hypertension'],
-    experienceYears: 22,
+    bmdcNumber: 'A-49210',
+    degrees: 'MBBS (DMC), MD (Gastroenterology, BSMMU), MACG',
+    specialty: 'Gastroenterology & Hepatology',
+    subSpecialties: ['Diagnostic Endoscopy', 'Acid Reflux & GERD', 'Fatty Liver Disease', 'IBS & Colonoscopy'],
+    experienceYears: 10,
     rating: 4.9,
-    reviewCount: 1480,
+    reviewCount: 1820,
     hospital: {
       id: 'hosp-1',
       slug: 'united-hospital-dhaka',
       name: 'United Hospital, Dhaka',
       location: 'Plot 15, Road 71, Gulshan, Dhaka 1212',
     },
-    fees: { inPerson: 1500, online: 1200 },
+    fees: { inPerson: 1200, online: 1000 },
     nextAvailableSlot: {
-      date: 'Today, 30 Oct',
-      time: '04:00 PM – 07:00 PM',
-      formatted: 'Today, 04:00 PM',
+      date: 'Tomorrow, 31 Oct',
+      time: '02:00 PM – 05:00 PM',
+      formatted: 'Tomorrow, 02:00 PM',
     },
-    about: 'Senior Consultant with over two decades of clinical experience in clinical and interventional cardiology, coronary angioplasty, and cardiac rehabilitation at leading cardiac institutes.',
-    areasOfExpertise: ['Angioplasty & Stenting', 'Hypertensive Heart Disease', 'Valvular Heart Disease', 'Arrhythmia Management'],
-    education: [
-      { degree: 'MBBS', institution: 'Dhaka Medical College' },
-      { degree: 'FCPS (Cardiology)', institution: 'BCPS' },
-      { degree: 'Fellowship in Interventional Cardiology', institution: 'Singapore General Hospital' },
+    about: 'Dedicated Consultant Gastroenterologist and Hepatologist with extensive experience in gastrointestinal motility disorders, chronic acid reflux, non-alcoholic fatty liver disease (NAFLD), and advanced therapeutic endoscopy.',
+    areasOfExpertise: [
+      'Diagnostic & Therapeutic Endoscopy',
+      'Acid Reflux, Heartburn & GERD',
+      'Fatty Liver & Metabolic Health',
+      'Peptic Ulcer Disease & Gastritis',
+      'Irritable Bowel Syndrome (IBS)',
+      'Colonoscopy & Polypectomy'
     ],
-    languages: ['Bangla', 'English'],
+    education: [
+      { degree: 'MBBS', institution: 'Dhaka Medical College (DMC)' },
+      { degree: 'MD (Gastroenterology)', institution: 'Bangabandhu Sheikh Mujib Medical University (BSMMU)' },
+      { degree: 'MACG', institution: 'American College of Gastroenterology (USA)' },
+    ],
+    languages: ['Bangla (Native)', 'English (Fluent)'],
     schedule: [
-      { day: 'Saturday', slots: ['04:00 PM', '05:00 PM', '06:00 PM'], type: 'in-person' },
-      { day: 'Monday', slots: ['04:00 PM', '05:00 PM', '06:00 PM'], type: 'in-person' },
+      { day: 'Saturday', slots: ['02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'], type: 'in-person' },
+      { day: 'Sunday', slots: ['02:00 PM', '03:30 PM', '05:00 PM'], type: 'in-person' },
+      { day: 'Tuesday', slots: ['02:00 PM', '03:00 PM', '04:00 PM'], type: 'in-person' },
       { day: 'Wednesday', slots: ['07:00 PM', '08:00 PM'], type: 'online' },
+      { day: 'Thursday', slots: ['02:00 PM', '04:00 PM'], type: 'in-person' },
     ],
     reviews: [
-      { id: 'rev-c1', patientName: 'Mahmudur Rahman', rating: 5, date: '1 week ago', comment: 'Prof. Rahman accurately diagnosed my coronary blockages and supervised my stent procedure smoothly.', verifiedVisit: true },
-      { id: 'rev-c2', patientName: 'Rokeya Begum', rating: 4.9, date: '3 weeks ago', comment: 'Excellent doctor. He answered all our questions regarding post-bypass medicine and recovery.', verifiedVisit: true }
+      { id: 'rev-s1', patientName: 'Mahir Faisal', rating: 5, date: '1 week ago', comment: 'Dr. Sadia Islam Prome cured my persistent 3-year acidity and stomach burning within weeks. Incredibly attentive physician.', verifiedVisit: true },
+      { id: 'rev-s2', patientName: 'Nusrat Jahan Tina', rating: 5, date: '3 weeks ago', comment: 'Her endoscopy was completely gentle and painless. Very reassuring and professional.', verifiedVisit: true }
     ]
   },
-
-  // 3. Orthopedics - Dr. Tanvir Hasan
   {
     id: 'doc-3',
     slug: 'dr-tanvir-hasan',
@@ -1285,10 +1302,10 @@ export const HEALTH_TIPS: HealthTip[] = [
     category: 'Nutrition',
     image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
     author: {
-      name: 'Dr. Farzana Ahmed',
+      name: 'Dr. Maruf Allam Saran',
       role: 'Internal Medicine Specialist',
       hospital: 'United Hospital, Dhaka',
-      avatar: '/images/dr_farzana.jpg',
+      avatar: '/images/dr_maruf.jpg',
     },
     publishedDate: 'Oct 28, 2026',
     readTime: '5 min read',
@@ -1388,10 +1405,10 @@ export const HEALTH_TIPS: HealthTip[] = [
     category: 'Disease Prevention',
     image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
     author: {
-      name: 'Dr. Farzana Ahmed',
+      name: 'Dr. Maruf Allam Saran',
       role: 'Internal Medicine Specialist',
       hospital: 'United Hospital, Dhaka',
-      avatar: '/images/dr_farzana.jpg',
+      avatar: '/images/dr_maruf.jpg',
     },
     publishedDate: 'Oct 25, 2026',
     readTime: '4 min read',
@@ -1410,10 +1427,10 @@ export const HEALTH_TIPS: HealthTip[] = [
     category: 'Lifestyle',
     image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80',
     author: {
-      name: 'Dr. Farzana Ahmed',
+      name: 'Dr. Maruf Allam Saran',
       role: 'Internal Medicine Specialist',
       hospital: 'United Hospital, Dhaka',
-      avatar: '/images/dr_farzana.jpg',
+      avatar: '/images/dr_maruf.jpg',
     },
     publishedDate: 'Oct 24, 2026',
     readTime: '4 min read',
@@ -1473,10 +1490,10 @@ export const HEALTH_TIPS: HealthTip[] = [
     category: 'Nutrition',
     image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80',
     author: {
-      name: 'Dr. Farzana Ahmed',
+      name: 'Dr. Maruf Allam Saran',
       role: 'Internal Medicine Specialist',
       hospital: 'United Hospital, Dhaka',
-      avatar: '/images/dr_farzana.jpg',
+      avatar: '/images/dr_maruf.jpg',
     },
     publishedDate: 'Oct 18, 2026',
     readTime: '4 min read',
@@ -1493,9 +1510,9 @@ export const INITIAL_APPOINTMENTS: Appointment[] = [
   {
     id: 'apt-101',
     doctorId: 'doc-1',
-    doctorName: 'Dr. Farzana Ahmed',
+    doctorName: 'Dr. Maruf Allam Saran',
     doctorSpecialty: 'Internal Medicine Specialist',
-    doctorAvatar: '/images/dr_farzana.jpg',
+    doctorAvatar: '/images/dr_maruf.jpg',
     hospitalName: 'United Hospital, Dhaka',
     consultationType: 'in-person',
     patientName: 'Sadia Rahman',
@@ -1548,7 +1565,7 @@ export const HEALTH_RECORDS: HealthRecord[] = [
     id: 'rec-2',
     title: 'Hypertension Management Prescription',
     type: 'Prescription',
-    doctorOrHospital: 'Dr. Farzana Ahmed',
+    doctorOrHospital: 'Dr. Maruf Allam Saran',
     date: '10 Sep 2026',
     fileSize: '420 KB PDF',
   },
@@ -1569,7 +1586,7 @@ export const SYMPTOM_DATA = [
     specialty: 'Internal Medicine',
     urgency: 'Moderate',
     guidance: 'Fever accompanied by severe weakness or lasting over 3 days requires clinical internal medicine evaluation with CBC and infection markers.',
-    recommendedDoctorSlug: 'dr-farzana-ahmed'
+    recommendedDoctorSlug: 'dr-maruf-allam-saran'
   },
   {
     category: 'Heart & Chest',

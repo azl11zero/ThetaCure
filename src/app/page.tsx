@@ -330,7 +330,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="mt-4 flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-100">
-                <span>By Dr. Farzana Ahmed</span>
+                <span>By Dr. Maruf Allam Saran</span>
                 <span className="flex items-center text-[#D91F2B] font-semibold group-hover:translate-x-1 transition-transform">
                   Read <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
                 </span>
@@ -351,7 +351,7 @@ export default function HomePage() {
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-[11px] font-bold text-emerald-700">
-                Mental Health
+                Gastro & Lifestyle
               </div>
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between">
@@ -360,11 +360,11 @@ export default function HomePage() {
                   Simple Daily Habits for a Healthier Life
                 </h4>
                 <p className="text-xs text-gray-500 mt-2 line-clamp-2 leading-relaxed">
-                  Actionable breathing exercises and movement rituals to reset work fatigue and stress.
+                  Actionable nutritional digestion rituals and hydration routines to reset gut health.
                 </p>
               </div>
               <div className="mt-4 flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-100">
-                <span>By Dr. Tanvir Hasan</span>
+                <span>By Dr. Sadia Islam Prome</span>
                 <span className="flex items-center text-[#D91F2B] font-semibold group-hover:translate-x-1 transition-transform">
                   Read <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
                 </span>

@@ -19,7 +19,8 @@ import { ConsultationType } from '@/lib/types';
 
 export default function DoctorBookingPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
-  const doctor = DOCTORS.find((d) => d.slug === resolvedParams.slug) || DOCTORS[0];
+  const targetSlug = resolvedParams.slug === 'dr-farzana-ahmed' ? 'dr-maruf-allam-saran' : resolvedParams.slug;
+  const doctor = DOCTORS.find((d) => d.slug === targetSlug) || DOCTORS[0];
 
   const [consultationType, setConsultationType] = useState<ConsultationType>('in-person');
   const [selectedDate, setSelectedDate] = useState('Tomorrow, 31 Oct');

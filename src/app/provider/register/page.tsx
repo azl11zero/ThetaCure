@@ -124,7 +124,7 @@ export default function ProviderRegisterPage() {
                   required
                   value={formData.institutionName}
                   onChange={(e) => setFormData({ ...formData, institutionName: e.target.value })}
-                  placeholder={providerType === 'hospital' ? 'e.g. United Hospital Dhaka' : 'e.g. Dr. Farzana Ahmed'}
+                  placeholder={providerType === 'hospital' ? 'e.g. United Hospital Dhaka' : 'e.g. Dr. Maruf Allam Saran'}
                   className="w-full px-4 py-2.5 bg-gray-50 focus:bg-white border border-gray-200 focus:border-[#D91F2B] rounded-xl text-sm focus:outline-none transition"
                 />
               </div>

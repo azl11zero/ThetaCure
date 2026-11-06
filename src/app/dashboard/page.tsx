@@ -346,7 +346,7 @@ export default function PatientDashboardPage() {
               <div className="flex items-start gap-3">
                 <Calendar className="w-5 h-5 text-gray-600 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-gray-900 text-sm">Follow-up Consultation with Dr. Farzana Ahmed</h4>
+                  <h4 className="font-bold text-gray-900 text-sm">Follow-up Consultation with Dr. Maruf Allam Saran</h4>
                   <p className="text-xs text-gray-500">Scheduled for 14 Nov 2026</p>
                 </div>
               </div>

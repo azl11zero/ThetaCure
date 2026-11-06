@@ -67,7 +67,7 @@ export default function ProviderOnboardingWizardPage() {
                 <label className="block text-xs font-semibold text-gray-700 mb-1">Full Legal Name</label>
                 <input
                   type="text"
-                  defaultValue="Dr. Farzana Ahmed"
+                  defaultValue="Dr. Maruf Allam Saran"
                   className="w-full px-4 py-2.5 bg-gray-50 rounded-xl border border-gray-200 text-sm focus:outline-none"
                 />
               </div>
@@ -75,7 +75,7 @@ export default function ProviderOnboardingWizardPage() {
                 <label className="block text-xs font-semibold text-gray-700 mb-1">Degrees & Fellowships</label>
                 <input
                   type="text"
-                  defaultValue="MBBS (DMC), MD (Internal Medicine, BSMMU), FCPS"
+                  defaultValue="MBBS, MD, DM (Cardiology), PhD, DSc, FCPS, FRCP, FACC, FESC"
                   className="w-full px-4 py-2.5 bg-gray-50 rounded-xl border border-gray-200 text-sm focus:outline-none"
                 />
               </div>

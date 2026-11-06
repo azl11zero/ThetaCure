@@ -27,7 +27,8 @@ import { useLanguage } from '@/components/LanguageContext';
 export default function DoctorProfilePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
   const { t } = useLanguage();
-  const doctor = DOCTORS.find((d) => d.slug === resolvedParams.slug) || DOCTORS[0];
+  const targetSlug = resolvedParams.slug === 'dr-farzana-ahmed' ? 'dr-maruf-allam-saran' : resolvedParams.slug;
+  const doctor = DOCTORS.find((d) => d.slug === targetSlug) || DOCTORS[0];
 
   const [activeTab, setActiveTab] = useState<'overview' | 'schedule' | 'reviews' | 'health-tips'>('overview');
   const [isBookingOpen, setIsBookingOpen] = useState(false);

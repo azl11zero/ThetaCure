@@ -85,7 +85,7 @@ export default function DoctorsDirectoryPage() {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search doctor by name, specialty, or condition (e.g. Farzana, Diabetes)..."
+            placeholder="Search doctor by name, specialty, or condition (e.g. Maruf, Sadia, Cardiology)..."
             className="w-full pl-11 pr-4 py-2.5 text-sm bg-gray-50 rounded-xl border border-gray-200 focus:outline-none focus:border-[#D91F2B] focus:bg-white transition"
           />
           {search && (

@@ -17,7 +17,7 @@ import {
 import { DOCTORS } from '@/lib/data';
 
 export default function ProviderDashboardPage() {
-  const doctor = DOCTORS[0]; // Dr. Farzana Ahmed
+  const doctor = DOCTORS[0]; // Dr. Maruf Allam Saran
   const [activeSlots, setActiveSlots] = useState([
     { time: '10:00 AM', status: 'Booked', patient: 'Sadia Rahman' },
     { time: '10:30 AM', status: 'Available', patient: '-' },

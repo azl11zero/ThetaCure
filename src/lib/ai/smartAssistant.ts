@@ -506,14 +506,19 @@ export function processAiQuery(query: string, currentLang: 'en' | 'bn' = 'en'): 
     q.includes('doctor') ||
     q.includes('specialist') ||
     q.includes('ডাক্তার') ||
-    q.includes('farzana') ||
+    q.includes('maruf') ||
+    q.includes('saran') ||
+    q.includes('sadia') ||
+    q.includes('prome') ||
     q.includes('rahman') ||
     q.includes('tanvir') ||
     q.includes('mehedi')
   ) {
-    let matchedDoc = DOCTORS[0]; // Dr. Farzana (1420 reviews)
-    if (q.includes('rahman') || q.includes('cardio')) {
-      matchedDoc = DOCTORS.find(d => d.slug === 'prof-dr-a-rahman') || DOCTORS[1];
+    let matchedDoc = DOCTORS[0]; // Dr. Maruf Allam Saran (2450 reviews, 5.0)
+    if (q.includes('maruf') || q.includes('saran') || q.includes('cardio') || q.includes('heart')) {
+      matchedDoc = DOCTORS.find(d => d.slug === 'dr-maruf-allam-saran') || DOCTORS[0];
+    } else if (q.includes('sadia') || q.includes('prome') || q.includes('gastro') || q.includes('stomach') || q.includes('pet')) {
+      matchedDoc = DOCTORS.find(d => d.slug === 'dr-sadia-islam-prome') || DOCTORS[1];
     } else if (q.includes('tanvir') || q.includes('ortho')) {
       matchedDoc = DOCTORS.find(d => d.slug === 'dr-tanvir-hasan') || DOCTORS[2];
     } else if (q.includes('mehedi') || q.includes('child') || q.includes('pediatric')) {

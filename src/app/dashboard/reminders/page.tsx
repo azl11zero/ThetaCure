@@ -6,7 +6,7 @@ import { Bell, Pill, Clock, Plus, CheckCircle2, ChevronRight, AlertCircle } from
 
 export default function RemindersDashboardPage() {
   const [reminders, setReminders] = useState([
-    { id: '1', medicine: 'Metformin 500mg', time: '08:30 AM (After Breakfast)', status: 'Active', prescribedBy: 'Dr. Farzana Ahmed' },
+    { id: '1', medicine: 'Bisoprolol 2.5mg', time: '08:30 AM (After Breakfast)', status: 'Active', prescribedBy: 'Dr. Maruf Allam Saran' },
     { id: '2', medicine: 'Atorvastatin 10mg', time: '09:00 PM (Before Bed)', status: 'Active', prescribedBy: 'Prof. Dr. A. Rahman' },
     { id: '3', medicine: 'Follow-up Consultation', time: 'Tomorrow 10:00 AM', status: 'Scheduled', prescribedBy: 'United Hospital' },
   ]);
